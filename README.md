@@ -83,7 +83,8 @@ Pour une utilisation **en lecture seule** (surveillance uniquement), remplacez l
      consoles et compatible avec tous les portails d'authentification ;
    - **Token API** (`Datacenter → Permissions → API Tokens`, en décochant *Privilege Separation*) —
      pratique en accès direct, mais ne permet pas d'ouvrir les consoles.
-3. **Tester la connexion** :
+3. **Tester la connexion** (Android 17 et plus : acceptez l'**accès au réseau local** demandé au premier
+   test, indispensable pour joindre un Proxmox en `192.168.x.x` ou `10.x`) :
    - *Certificat non reconnu* : normal pour le certificat d'origine de Proxmox. Comparez l'empreinte avec
      celle affichée dans *Nœud → Système → Certificats*, puis **Faire confiance**. Si elle change un jour,
      l'application vous alertera.
@@ -128,7 +129,19 @@ comme dans un navigateur. La session est conservée chiffrée sur le téléphone
 | Fiche VM / conteneur | **Résumé** (actions, console, IP), **Performances** (graphiques), **Snapshots**, **Sauvegardes**, **Gérer** (ressources, disques, clonage, migration, HA, modèle) |
 | Écran nœud | Version, charge, graphiques, shell, mises à jour, redémarrage / arrêt |
 | Icône ☰ du tableau de bord | Tâches Proxmox en cours et récentes, avec leur journal |
-| Paramètres | Thème, verrouillage, notifications, journal des actions |
+| Paramètres | Thème, verrouillage, notifications, journal des actions, export / import de la configuration |
+| Écran d'accueil du téléphone | Widget : nœuds en ligne et machines en marche (sans nom de machine) |
+
+### Hors ligne
+
+Le dernier état connu de chaque serveur est conservé (chiffré) : sans réseau, le tableau de bord
+l'affiche avec la mention « Hors ligne ».
+
+### Changer de téléphone
+
+*Paramètres → Export / import de la configuration* : exportez vos serveurs (et, au choix, leurs mots de
+passe) dans un fichier **chiffré par une phrase secrète**, puis importez-le sur le nouveau téléphone.
+Sans la phrase secrète, le fichier est inexploitable. Les sessions de portail ne sont jamais exportées.
 
 ### Consoles
 
@@ -156,3 +169,4 @@ vous invite à vous reconnecter quand sa session a expiré.
 | Le certificat a changé | Normal après un renouvellement ; sinon, méfiance. Approuvez seulement si vous savez pourquoi |
 | Console noire / clavier inopérant | Bouton ⌨ ; pour une VM, *100 %* et disposition `keyboard fr` (section 6) |
 | Serveur injoignable | Réseau du téléphone, VPN, adresse et port (`:8006` en accès direct) |
+| Délai dépassé en réseau local alors que le navigateur fonctionne | Android 17 : bouton **Autoriser l'accès au réseau local** (ou *Paramètres Android → Applications → ProxMox Manager → Autorisations*) |
