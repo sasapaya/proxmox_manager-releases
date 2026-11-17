@@ -130,7 +130,9 @@ comme dans un navigateur. La session est conservée chiffrée sur le téléphone
 | Écran nœud | Version, charge, graphiques, shell, mises à jour, redémarrage / arrêt |
 | Icône ☰ du tableau de bord | Tâches Proxmox en cours et récentes, avec leur journal |
 | Paramètres | Thème, verrouillage, notifications, journal des actions, export / import de la configuration |
-| Écran d'accueil du téléphone | Widget : nœuds en ligne et machines en marche (sans nom de machine) |
+| Écran d'accueil du téléphone | Widget de synthèse : état, nœuds, machines, CPU, RAM, stockage par serveur (sans nom de machine) |
+| Écran d'accueil du téléphone | Widget « Machines Proxmox » : chaque VM et conteneur avec son état, CPU et RAM (affiche les noms) |
+| Appui long sur un widget → Reconfigurer | Choisir les serveurs affichés dans ce widget |
 
 ### Hors ligne
 
